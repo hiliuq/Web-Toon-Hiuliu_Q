@@ -1,0 +1,3604 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="description"
+        content="HILIU_Q - Dịch truyện theo yêu cầu, cộng đồng độc giả và các công cụ kết nối trực tuyến."
+    >
+
+    <meta
+        name="theme-color"
+        content="#050505"
+    >
+
+    <meta
+        name="author"
+        content="HILIU_Q"
+    >
+
+    <title>HILIU_Q — Reader Hub</title>
+
+    <!-- =========================================================
+         FONT
+         ========================================================= -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =========================================================
+         ICON
+         ========================================================= -->
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+    <!-- =========================================================
+         MAIN CSS
+         ========================================================= -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<!-- =============================================================
+     BACKGROUND
+     ============================================================= -->
+
+<div class="ambient-background" aria-hidden="true">
+
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="grid-overlay"></div>
+
+</div>
+
+
+<!-- =============================================================
+     APP SHELL
+     ============================================================= -->
+
+<div id="app" class="app-shell">
+
+
+    <!-- =========================================================
+         TOP NAVBAR
+         ========================================================= -->
+
+    <header class="topbar">
+
+        <div class="topbar-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                class="brand"
+                href="#home"
+                data-route="home"
+            >
+
+                <div class="brand-logo">
+
+                    <span class="brand-moon">◐</span>
+
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        HILIU_Q
+                    </span>
+
+                    <span class="brand-subtitle">
+                        READER HUB
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="desktop-nav"
+                aria-label="Điều hướng chính"
+            >
+
+                <a
+                    href="#home"
+                    class="nav-link active"
+                    data-route="home"
+                >
+                    <i data-lucide="home"></i>
+                    <span>Trang chủ</span>
+                </a>
+
+                <a
+                    href="#read"
+                    class="nav-link"
+                    data-route="read"
+                >
+                    <i data-lucide="book-open"></i>
+                    <span>Đọc truyện</span>
+                </a>
+
+                <a
+                    href="#watch"
+                    class="nav-link"
+                    data-route="watch"
+                >
+                    <i data-lucide="clapperboard"></i>
+                    <span>Rạp phim</span>
+                </a>
+
+                <a
+                    href="#connect"
+                    class="nav-link"
+                    data-route="connect"
+                >
+                    <i data-lucide="radio"></i>
+                    <span>Kết nối</span>
+                </a>
+
+                <a
+                    href="#messenger"
+                    class="nav-link"
+                    data-route="messenger"
+                >
+                    <i data-lucide="message-circle"></i>
+                    <span>Messenger</span>
+                </a>
+
+            </nav>
+
+
+            <!-- TOPBAR ACTIONS -->
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="searchButton"
+                    aria-label="Tìm kiếm"
+                    title="Tìm kiếm"
+                >
+                    <i data-lucide="search"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="notificationButton"
+                    aria-label="Thông báo"
+                    title="Thông báo"
+                >
+                    <i data-lucide="bell"></i>
+
+                    <span
+                        class="notification-dot"
+                        id="notificationDot"
+                    ></span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="profile-mini"
+                    id="profileButton"
+                    aria-label="Mở hồ sơ"
+                >
+
+                    <span class="profile-mini-avatar">
+
+                        <img
+                            id="avatarTop"
+                            src="https://ibb.co/kNJ7TdN"
+                            alt="Avatar HILIU_Q"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('fallback-avatar');"
+                        >
+
+                        <span class="avatar-fallback">
+                            HQ
+                        </span>
+
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="mobile-menu-btn"
+                    id="mobileMenuButton"
+                    aria-label="Mở menu"
+                >
+                    <i data-lucide="menu"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MOBILE NAVIGATION
+         ========================================================= -->
+
+    <aside
+        class="mobile-sidebar"
+        id="mobileSidebar"
+        aria-hidden="true"
+    >
+
+        <div class="mobile-sidebar-head">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    <span class="brand-moon">◐</span>
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        HILIU_Q
+                    </span>
+
+                    <span class="brand-subtitle">
+                        READER HUB
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="icon-btn"
+                id="closeMobileMenu"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-nav">
+
+            <a href="#home" data-route="home">
+                <i data-lucide="home"></i>
+                Trang chủ
+            </a>
+
+            <a href="#read" data-route="read">
+                <i data-lucide="book-open"></i>
+                Đọc truyện
+            </a>
+
+            <a href="#watch" data-route="watch">
+                <i data-lucide="clapperboard"></i>
+                Rạp phim
+            </a>
+
+            <a href="#connect" data-route="connect">
+                <i data-lucide="radio"></i>
+                Kết nối
+            </a>
+
+            <a href="#messenger" data-route="messenger">
+                <i data-lucide="message-circle"></i>
+                Messenger
+            </a>
+
+            <a href="#donate" data-route="donate">
+                <i data-lucide="heart"></i>
+                Donate
+            </a>
+
+            <a href="#request" data-route="request">
+                <i data-lucide="languages"></i>
+                Yêu cầu dịch
+            </a>
+
+            <a href="#bypass" data-route="bypass">
+                <i data-lucide="external-link"></i>
+                Vượt Link
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================================
+             ANNOUNCEMENT BAR
+             ===================================================== -->
+
+        <section
+            class="announcement-section container"
+            id="announcementSection"
+        >
+
+            <div class="announcement-card">
+
+                <div class="announcement-icon">
+                    <i data-lucide="megaphone"></i>
+                </div>
+
+                <div class="announcement-content">
+
+                    <span class="announcement-label">
+                        THÔNG BÁO
+                    </span>
+
+                    <p id="globalAnnouncement">
+                        Chào mừng bạn đến với HILIU_Q Reader Hub.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="icon-btn small"
+                    id="closeAnnouncement"
+                    aria-label="Đóng thông báo"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HOME
+             ===================================================== -->
+
+        <section
+            id="home"
+            class="page-section active-page"
+            data-page="home"
+        >
+
+            <!-- HERO -->
+
+            <section class="hero container">
+
+                <div class="hero-content">
+
+                    <div class="status-pill">
+
+                        <span class="status-indicator"></span>
+
+                        <span>
+                            HILIU_Q ONLINE
+                        </span>
+
+                    </div>
+
+
+                    <h1 class="hero-title">
+
+                        <span class="hero-title-small">
+                            Dành cho
+                        </span>
+
+                        <span class="hero-title-main">
+                            những người
+                        </span>
+
+                        <span class="hero-title-gradient">
+                            yêu truyện.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+                        HILIU_Q là không gian dành cho độc giả,
+                        nơi bạn có thể đọc truyện, xem cùng nhau,
+                        trò chuyện, kết nối thiết bị và gửi yêu cầu
+                        dịch truyện theo nhu cầu.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#read"
+                            class="btn btn-primary"
+                            data-route="read"
+                        >
+                            <i data-lucide="book-open"></i>
+                            Khám phá kho truyện
+                        </a>
+
+                        <a
+                            href="#request"
+                            class="btn btn-secondary"
+                            data-route="request"
+                        >
+                            <i data-lucide="languages"></i>
+                            Yêu cầu dịch
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-meta">
+
+                        <div class="hero-meta-item">
+
+                            <span class="hero-meta-value">
+                                06+
+                            </span>
+
+                            <span class="hero-meta-label">
+                                Ngôn ngữ
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-meta-divider"></div>
+
+
+                        <div class="hero-meta-item">
+
+                            <span class="hero-meta-value">
+                                24/7
+                            </span>
+
+                            <span class="hero-meta-label">
+                                Reader Hub
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-meta-divider"></div>
+
+
+                        <div class="hero-meta-item">
+
+                            <span class="hero-meta-value">
+                                HQ
+                            </span>
+
+                            <span class="hero-meta-label">
+                                HILIU_Q
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO PROFILE -->
+
+                <div class="hero-profile">
+
+                    <div class="profile-glow"></div>
+
+                    <div class="profile-card glass-card">
+
+                        <div class="profile-card-top">
+
+                            <span class="profile-badge">
+                                <i data-lucide="sparkles"></i>
+                                CREATOR
+                            </span>
+
+                            <span class="profile-status">
+                                <span></span>
+                                Online
+                            </span>
+
+                        </div>
+
+
+                        <div class="avatar-large">
+
+                            <img
+                                id="avatarHero"
+                                src="https://ibb.co/kNJ7TdN"
+                                alt="HILIU_Q Avatar"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.parentElement.classList.add('avatar-image-failed');"
+                            >
+
+                            <div class="avatar-large-fallback">
+                                HQ
+                            </div>
+
+                        </div>
+
+
+                        <h2>
+                            HILIU_Q
+                        </h2>
+
+                        <p>
+                            Dịch truyện theo yêu cầu
+                        </p>
+
+
+                        <div class="profile-tags">
+
+                            <span>
+                                Manga
+                            </span>
+
+                            <span>
+                                Manhwa
+                            </span>
+
+                            <span>
+                                Manhua
+                            </span>
+
+                            <span>
+                                Webtoon
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            class="telegram-btn"
+                            href="https://t.me/hiliu_q"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <i data-lucide="send"></i>
+
+                            <span>
+                                @hiliu_q
+                            </span>
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="telegram-arrow"
+                            ></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK ACCESS -->
+
+            <section class="container section-block">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            QUICK ACCESS
+                        </span>
+
+                        <h2>
+                            Mọi thứ ở một nơi.
+                        </h2>
+
+                    </div>
+
+                    <span class="section-note">
+                        HILIU_Q Reader Hub
+                    </span>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+
+                    <article
+                        class="feature-card glass-card feature-card-large"
+                        data-route="read"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+
+                        <span class="feature-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Kho truyện
+                        </h3>
+
+                        <p>
+                            Khám phá truyện do HILIU_Q và cộng đồng
+                            đăng tải. Đọc trực tiếp trên web.
+                        </p>
+
+                        <span class="feature-link">
+                            Xem kho truyện
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </article>
+
+
+                    <article
+                        class="feature-card glass-card"
+                        data-route="watch"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="clapperboard"></i>
+                        </div>
+
+                        <span class="feature-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Rạp phim đồng hành
+                        </h3>
+
+                        <p>
+                            Tạo phòng xem video và đồng bộ trải nghiệm
+                            cùng bạn bè.
+                        </p>
+
+                        <span class="feature-link">
+                            Tạo phòng
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </article>
+
+
+                    <article
+                        class="feature-card glass-card"
+                        data-route="connect"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="radio"></i>
+                        </div>
+
+                        <span class="feature-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Kết nối thiết bị
+                        </h3>
+
+                        <p>
+                            Ghép cặp thiết bị và trao đổi dữ liệu qua
+                            kết nối trực tiếp.
+                        </p>
+
+                        <span class="feature-link">
+                            Kết nối
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </article>
+
+
+                    <article
+                        class="feature-card glass-card"
+                        data-route="messenger"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+
+                        <span class="feature-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Messenger
+                        </h3>
+
+                        <p>
+                            Nhắn tin và gọi với những thiết bị đang
+                            kết nối trong Reader Hub.
+                        </p>
+
+                        <span class="feature-link">
+                            Mở Messenger
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- SERVICES -->
+
+            <section class="container section-block">
+
+                <div class="service-layout">
+
+
+                    <div class="service-intro">
+
+                        <span class="eyebrow">
+                            HILIU_Q SERVICE
+                        </span>
+
+                        <h2>
+                            Dịch truyện
+                            <span>
+                                theo yêu cầu.
+                            </span>
+                        </h2>
+
+                        <p>
+                            Dịch dễ hiểu, tự nhiên, chú trọng ngữ cảnh,
+                            xưng hô và bố cục truyện.
+                        </p>
+
+                        <a
+                            href="#request"
+                            class="btn btn-primary"
+                            data-route="request"
+                        >
+                            <i data-lucide="send"></i>
+                            Gửi yêu cầu
+                        </a>
+
+                    </div>
+
+
+                    <div class="price-panel glass-card">
+
+                        <div class="price-panel-head">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    BẢNG GIÁ
+                                </span>
+
+                                <h3>
+                                    Translation
+                                </h3>
+
+                            </div>
+
+                            <span class="price-unit">
+                                / ảnh
+                            </span>
+
+                        </div>
+
+
+                        <div class="price-list">
+
+
+                            <div class="price-row">
+
+                                <div class="language">
+
+                                    <span>
+                                        🇬🇧
+                                    </span>
+
+                                    <span>
+                                        Anh
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        🇻🇳
+                                    </span>
+
+                                    <span>
+                                        Việt
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    1.5K
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <div class="language">
+
+                                    <span>
+                                        🇨🇳
+                                    </span>
+
+                                    <span>
+                                        Trung
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        🇻🇳
+                                    </span>
+
+                                    <span>
+                                        Việt
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    1.7K
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <div class="language">
+
+                                    <span>
+                                        🇯🇵
+                                    </span>
+
+                                    <span>
+                                        Nhật
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        🇻🇳
+                                    </span>
+
+                                    <span>
+                                        Việt
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    1.7K
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <div class="language">
+
+                                    <span>
+                                        🇰🇷
+                                    </span>
+
+                                    <span>
+                                        Hàn
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        🇻🇳
+                                    </span>
+
+                                    <span>
+                                        Việt
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    1.5K
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <div class="language">
+
+                                    <span>
+                                        🌍
+                                    </span>
+
+                                    <span>
+                                        Ngôn ngữ khác
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        🇻🇳
+                                    </span>
+
+                                    <span>
+                                        Việt
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    1.8K
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <div class="language">
+
+                                    <span>
+                                        🌐
+                                    </span>
+
+                                    <span>
+                                        Ngôn ngữ khác
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        🇬🇧
+                                    </span>
+
+                                    <span>
+                                        Anh
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    2K
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WHY HILIU -->
+
+            <section class="container section-block">
+
+                <div class="glass-card benefits-card">
+
+                    <div class="benefits-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                WHY HILIU_Q
+                            </span>
+
+                            <h2>
+                                Rẻ ≠ Sơ Sài.
+                            </h2>
+
+                        </div>
+
+                        <div class="benefits-mark">
+                            HQ
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefits-grid">
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                <i data-lucide="languages"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Dịch tự nhiên
+                                </h3>
+
+                                <p>
+                                    Ưu tiên ngữ cảnh, cách diễn đạt
+                                    và xưng hô dễ hiểu.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                <i data-lucide="layout"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Giữ bố cục
+                                </h3>
+
+                                <p>
+                                    Chú trọng cách trình bày và vị trí
+                                    thoại trong khung truyện.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                <i data-lucide="type"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Chữ dễ đọc
+                                </h3>
+
+                                <p>
+                                    Typeset gọn, sạch và phù hợp
+                                    với từng loại truyện.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                <i data-lucide="badge-check"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Nhận đơn linh hoạt
+                                </h3>
+
+                                <p>
+                                    Có thể nhận đơn số lượng ít hoặc
+                                    nhiều chapter.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- COMMUNITY -->
+
+            <section class="container section-block">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            COMMUNITY
+                        </span>
+
+                        <h2>
+                            Không chỉ là đọc truyện.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="community-grid">
+
+
+                    <article class="community-card glass-card">
+
+                        <div class="community-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+
+                        <h3>
+                            Cộng đồng độc giả
+                        </h3>
+
+                        <p>
+                            Giao tiếp, thảo luận và chia sẻ cùng những
+                            người có chung sở thích.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="text-btn"
+                            data-route="messenger"
+                        >
+                            Mở Messenger
+                            <i data-lucide="arrow-up-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <article class="community-card glass-card">
+
+                        <div class="community-icon">
+                            <i data-lucide="tv"></i>
+                        </div>
+
+                        <h3>
+                            Xem cùng nhau
+                        </h3>
+
+                        <p>
+                            Đồng bộ video hoặc truyện và trò chuyện
+                            trực tiếp trong cùng một phòng.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="text-btn"
+                            data-route="watch"
+                        >
+                            Khám phá
+                            <i data-lucide="arrow-up-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <article class="community-card glass-card">
+
+                        <div class="community-icon">
+                            <i data-lucide="share-2"></i>
+                        </div>
+
+                        <h3>
+                            Chia sẻ dữ liệu
+                        </h3>
+
+                        <p>
+                            Gửi tệp, link, ảnh và video giữa các thiết bị
+                            đã được ghép cặp.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="text-btn"
+                            data-route="connect"
+                        >
+                            Ghép thiết bị
+                            <i data-lucide="arrow-up-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- DONATE CTA -->
+
+            <section class="container section-block">
+
+                <div class="donate-banner glass-card">
+
+                    <div class="donate-banner-glow"></div>
+
+                    <div class="donate-content">
+
+                        <span class="eyebrow">
+                            SUPPORT HILIU_Q
+                        </span>
+
+                        <h2>
+                            Một chút ủng hộ,
+                            <br>
+                            thêm động lực ra truyện.
+                        </h2>
+
+                        <p>
+                            Toàn bộ khu vực Donate được thiết kế để
+                            Admin có thể thay đổi thông tin ngân hàng,
+                            QR và nội dung bất cứ lúc nào.
+                        </p>
+
+                        <a
+                            href="#donate"
+                            class="btn btn-light"
+                            data-route="donate"
+                        >
+                            <i data-lucide="heart"></i>
+                            Ủng hộ HILIU_Q
+                        </a>
+
+                    </div>
+
+                    <div class="donate-symbol">
+                        ♥
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =====================================================
+             READ PAGE
+             ===================================================== -->
+
+        <section
+            id="read"
+            class="page-section"
+            data-page="read"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    LIBRARY
+                </span>
+
+                <h1>
+                    Kho truyện
+                </h1>
+
+                <p>
+                    Truyện do Admin và Member đăng tải.
+                </p>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="toolbar glass-card">
+
+                    <div class="search-box">
+
+                        <i data-lucide="search"></i>
+
+                        <input
+                            type="search"
+                            id="comicSearch"
+                            placeholder="Tìm truyện..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="comicCategory"
+                        class="select-control"
+                    >
+
+                        <option value="all">
+                            Tất cả thể loại
+                        </option>
+
+                        <option value="manga">
+                            Manga
+                        </option>
+
+                        <option value="manhwa">
+                            Manhwa
+                        </option>
+
+                        <option value="manhua">
+                            Manhua
+                        </option>
+
+                        <option value="webtoon">
+                            Webtoon
+                        </option>
+
+                        <option value="comic">
+                            Comic
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="randomComicButton"
+                    >
+
+                        <i data-lucide="shuffle"></i>
+
+                        Ngẫu nhiên
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="comic-grid"
+                    id="comicGrid"
+                >
+
+                    <!--
+                        JS sẽ render danh sách truyện tại đây.
+                    -->
+
+                    <article class="comic-placeholder glass-card">
+
+                        <div class="placeholder-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+
+                        <h3>
+                            Kho truyện đang chờ dữ liệu
+                        </h3>
+
+                        <p>
+                            Admin hoặc Member có thể đăng truyện
+                            vào khu vực này.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WATCH TOGETHER
+             ===================================================== -->
+
+        <section
+            id="watch"
+            class="page-section"
+            data-page="watch"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    WATCH TOGETHER
+                </span>
+
+                <h1>
+                    Rạp Phim Đồng Hành
+                </h1>
+
+                <p>
+                    Tạo phòng riêng và cùng xem video với mọi người.
+                </p>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="watch-hero glass-card">
+
+                    <div class="watch-hero-icon">
+                        <i data-lucide="clapperboard"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Xem cùng nhau.
+                        </h2>
+
+                        <p>
+                            YouTube hoặc video trực tiếp, đồng bộ
+                            trạng thái phát giữa các thành viên.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="createWatchRoom"
+                    >
+                        <i data-lucide="plus"></i>
+                        Tạo phòng
+                    </button>
+
+                </div>
+
+
+                <div class="watch-options-grid">
+
+
+                    <div class="glass-card option-card">
+
+                        <div class="option-icon">
+                            <i data-lucide="globe-2"></i>
+                        </div>
+
+                        <h3>
+                            Công khai
+                        </h3>
+
+                        <p>
+                            Mọi thiết bị trong Reader Hub đều có thể
+                            nhìn thấy và tham gia.
+                        </p>
+
+                    </div>
+
+
+                    <div class="glass-card option-card">
+
+                        <div class="option-icon">
+                            <i data-lucide="lock"></i>
+                        </div>
+
+                        <h3>
+                            Riêng tư
+                        </h3>
+
+                        <p>
+                            Phòng có mật khẩu. Chỉ người biết mật khẩu
+                            mới có thể tham gia.
+                        </p>
+
+                    </div>
+
+
+                    <div class="glass-card option-card">
+
+                        <div class="option-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+
+                        <h3>
+                            Chỉ người được mời
+                        </h3>
+
+                        <p>
+                            Chủ phòng chọn những thiết bị hoặc thành viên
+                            được phép vào.
+                        </p>
+
+                    </div>
+
+
+                    <div class="glass-card option-card">
+
+                        <div class="option-icon">
+                            <i data-lucide="radio-tower"></i>
+                        </div>
+
+                        <h3>
+                            Đồng bộ thời gian thực
+                        </h3>
+
+                        <p>
+                            Phát, dừng, tua và thay đổi video được đồng bộ
+                            cho các thành viên trong phòng.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass-card room-browser">
+
+                    <div class="room-browser-head">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                LIVE ROOMS
+                            </span>
+
+                            <h2>
+                                Phòng đang hoạt động
+                            </h2>
+
+                        </div>
+
+                        <span
+                            class="live-count"
+                            id="watchRoomCount"
+                        >
+                            0 phòng
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="watchRoomList"
+                        class="room-list"
+                    >
+
+                        <div class="empty-state">
+
+                            <i data-lucide="moon"></i>
+
+                            <p>
+                                Chưa có phòng công khai.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONNECT PAGE
+             ===================================================== -->
+
+        <section
+            id="connect"
+            class="page-section"
+            data-page="connect"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    DEVICE LINK
+                </span>
+
+                <h1>
+                    Kết nối thiết bị
+                </h1>
+
+                <p>
+                    Ghép cặp hai thiết bị để trao đổi dữ liệu và
+                    sử dụng các tính năng realtime.
+                </p>
+
+            </div>
+
+
+            <div class="container connect-layout">
+
+
+                <div class="glass-card connection-panel">
+
+                    <div class="panel-head">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                YOUR DEVICE
+                            </span>
+
+                            <h2>
+                                Thiết bị của bạn
+                            </h2>
+
+                        </div>
+
+                        <span
+                            class="connection-status"
+                            id="deviceConnectionStatus"
+                        >
+                            <span></span>
+                            Đang chờ
+                        </span>
+
+                    </div>
+
+
+                    <div class="device-identity">
+
+                        <div class="device-icon">
+
+                            <i data-lucide="smartphone"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 id="currentDeviceName">
+                                Thiết bị hiện tại
+                            </h3>
+
+                            <p id="currentDeviceInfo">
+                                Đang lấy thông tin thiết bị...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pair-code-area">
+
+                        <span>
+                            MÃ GHÉP CẶP
+                        </span>
+
+                        <strong id="pairCode">
+                            ------
+                        </strong>
+
+                        <button
+                            type="button"
+                            class="text-btn"
+                            id="copyPairCode"
+                        >
+                            <i data-lucide="copy"></i>
+                            Sao chép
+                        </button>
+
+                    </div>
+
+
+                    <div class="connection-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="generatePairCode"
+                        >
+                            <i data-lucide="link-2"></i>
+                            Tạo mã ghép
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="disconnectDevice"
+                        >
+                            <i data-lucide="unlink"></i>
+                            Ngắt kết nối
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass-card devices-panel">
+
+                    <div class="panel-head">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                AVAILABLE DEVICES
+                            </span>
+
+                            <h2>
+                                Thiết bị đang kết nối
+                            </h2>
+
+                        </div>
+
+                        <span
+                            class="device-count"
+                            id="connectedDeviceCount"
+                        >
+                            0 thiết bị
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="device-list"
+                        id="deviceList"
+                    >
+
+                        <div class="empty-state">
+
+                            <i data-lucide="monitor-smartphone"></i>
+
+                            <p>
+                                Chưa có thiết bị được ghép cặp.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRANSFER -->
+
+            <div class="container section-block">
+
+                <div class="glass-card transfer-panel">
+
+                    <div class="panel-head">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                FILE TRANSFER
+                            </span>
+
+                            <h2>
+                                Trao đổi dữ liệu
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="transfer-dropzone" id="dropzone">
+
+                        <input
+                            type="file"
+                            id="fileInput"
+                            multiple
+                            hidden
+                        >
+
+                        <div class="dropzone-icon">
+
+                            <i data-lucide="upload-cloud"></i>
+
+                        </div>
+
+                        <h3>
+                            Kéo tệp vào đây
+                        </h3>
+
+                        <p>
+                            Hoặc chọn ảnh, video, tài liệu từ thiết bị.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="chooseFileButton"
+                        >
+                            <i data-lucide="folder-open"></i>
+                            Chọn tệp
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="transfer-list"
+                        id="transferList"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCREEN + CAMERA -->
+
+            <div class="container section-block">
+
+                <div class="media-share-grid">
+
+
+                    <div class="glass-card media-share-card">
+
+                        <div class="media-share-icon">
+                            <i data-lucide="monitor-up"></i>
+                        </div>
+
+                        <span class="eyebrow">
+                            SCREEN SHARE
+                        </span>
+
+                        <h2>
+                            Truyền màn hình
+                        </h2>
+
+                        <p>
+                            Cho thiết bị đã ghép cặp xem màn hình
+                            của bạn theo thời gian thực.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="startScreenShare"
+                        >
+                            <i data-lucide="screen-share"></i>
+                            Chia sẻ màn hình
+                        </button>
+
+                    </div>
+
+
+                    <div class="glass-card media-share-card">
+
+                        <div class="media-share-icon">
+                            <i data-lucide="camera"></i>
+                        </div>
+
+                        <span class="eyebrow">
+                            CAMERA
+                        </span>
+
+                        <h2>
+                            Truyền camera
+                        </h2>
+
+                        <p>
+                            Chia sẻ camera thiết bị cho thiết bị được
+                            phép xem.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="startCameraShare"
+                        >
+                            <i data-lucide="camera"></i>
+                            Chia sẻ camera
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MESSENGER
+             ===================================================== -->
+
+        <section
+            id="messenger"
+            class="page-section"
+            data-page="messenger"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    MESSENGER
+                </span>
+
+                <h1>
+                    Chat & Call
+                </h1>
+
+                <p>
+                    Giao tiếp trực tiếp với những thiết bị trong
+                    Reader Hub.
+                </p>
+
+            </div>
+
+
+            <div class="container messenger-shell glass-card">
+
+
+                <!-- CONTACTS -->
+
+                <aside class="messenger-sidebar">
+
+                    <div class="messenger-sidebar-head">
+
+                        <h2>
+                            Tin nhắn
+                        </h2>
+
+                        <button
+                            type="button"
+                            class="icon-btn small"
+                            id="newChatButton"
+                        >
+                            <i data-lucide="square-pen"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="messenger-search">
+
+                        <i data-lucide="search"></i>
+
+                        <input
+                            type="search"
+                            placeholder="Tìm cuộc trò chuyện..."
+                            id="messageSearch"
+                        >
+
+                    </div>
+
+
+                    <div
+                        class="conversation-list"
+                        id="conversationList"
+                    >
+
+                        <div class="empty-state small">
+
+                            <i data-lucide="message-square"></i>
+
+                            <p>
+                                Chưa có cuộc trò chuyện.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- CHAT -->
+
+                <section class="chat-area">
+
+
+                    <header class="chat-header">
+
+                        <div class="chat-user">
+
+                            <div class="chat-avatar">
+                                <span>
+                                    HQ
+                                </span>
+                            </div>
+
+                            <div>
+
+                                <h3 id="chatUserName">
+                                    Chưa chọn người
+                                </h3>
+
+                                <p id="chatUserStatus">
+                                    Chọn một thiết bị để bắt đầu
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chat-actions">
+
+                            <button
+                                type="button"
+                                class="icon-btn"
+                                id="voiceCallButton"
+                                title="Gọi thoại"
+                            >
+                                <i data-lucide="phone"></i>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="icon-btn"
+                                id="videoCallButton"
+                                title="Video call"
+                            >
+                                <i data-lucide="video"></i>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="icon-btn"
+                                id="chatMoreButton"
+                                title="Thêm"
+                            >
+                                <i data-lucide="more-horizontal"></i>
+                            </button>
+
+                        </div>
+
+                    </header>
+
+
+                    <div
+                        class="chat-messages"
+                        id="chatMessages"
+                    >
+
+                        <div class="chat-welcome">
+
+                            <div class="chat-welcome-icon">
+                                <i data-lucide="message-circle"></i>
+                            </div>
+
+                            <h3>
+                                Messenger HILIU_Q
+                            </h3>
+
+                            <p>
+                                Tin nhắn chỉ hoạt động trong
+                                Reader Hub.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        class="message-composer"
+                        id="messageForm"
+                    >
+
+                        <button
+                            type="button"
+                            class="icon-btn"
+                            id="attachMessageButton"
+                        >
+                            <i data-lucide="paperclip"></i>
+                        </button>
+
+
+                        <input
+                            type="text"
+                            id="messageInput"
+                            placeholder="Nhập tin nhắn..."
+                            autocomplete="off"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="icon-btn"
+                            id="emojiButton"
+                        >
+                            <i data-lucide="smile"></i>
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="send-message-btn"
+                            aria-label="Gửi"
+                        >
+                            <i data-lucide="send"></i>
+                        </button>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DONATE
+             ===================================================== -->
+
+        <section
+            id="donate"
+            class="page-section"
+            data-page="donate"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    SUPPORT
+                </span>
+
+                <h1>
+                    Donate HILIU_Q
+                </h1>
+
+                <p>
+                    Ủng hộ để HILIU_Q có thêm động lực duy trì
+                    dịch vụ và cộng đồng.
+                </p>
+
+            </div>
+
+
+            <div class="container donate-layout">
+
+
+                <div class="glass-card donate-message">
+
+                    <div class="donate-big-icon">
+                        ♥
+                    </div>
+
+                    <span class="eyebrow">
+                        THANK YOU
+                    </span>
+
+                    <h2>
+                        Giá sinh viên —
+                        <br>
+                        chất lượng nghiêm túc.
+                    </h2>
+
+                    <p>
+                        Mọi khoản ủng hộ đều có ý nghĩa đối với
+                        HILIU_Q và hoạt động của Reader Hub.
+                    </p>
+
+                    <div class="donate-note">
+
+                        <i data-lucide="shield-check"></i>
+
+                        <span>
+                            Thông tin thanh toán do Admin quản lý.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="glass-card bank-card"
+                    id="bankDonationCard"
+                >
+
+                    <div class="bank-card-head">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                BANK TRANSFER
+                            </span>
+
+                            <h2>
+                                QR Ngân hàng
+                            </h2>
+
+                        </div>
+
+                        <span class="admin-managed">
+                            ADMIN
+                        </span>
+
+                    </div>
+
+
+                    <div class="qr-placeholder">
+
+                        <div class="qr-inner">
+
+                            <i data-lucide="qr-code"></i>
+
+                            <span>
+                                QR CODE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bank-info">
+
+                        <div class="bank-row">
+
+                            <span>
+                                Ngân hàng
+                            </span>
+
+                            <strong id="bankName">
+                                Bùi Thị Quyên
+                            </strong>
+
+                        </div>
+
+                        <div class="bank-row">
+
+                            <span>
+                                8882319396
+                            </span>
+
+                            <strong id="bankOwner">
+                                8882319396
+                            </strong>
+
+                        </div>
+
+                        <div class="bank-row">
+
+                            <span>
+                                8882319396
+                            </span>
+
+                            <strong id="bankAccount">
+                                8882319396
+                            </strong>
+
+                        </div>
+
+                        <div class="bank-row">
+
+                            <span>
+                                Nội dung
+                            </span>
+
+                            <strong id="bankContent">
+                                Donate HILIU_Q
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary full-width"
+                        id="copyBankButton"
+                    >
+
+                        <i data-lucide="copy"></i>
+
+                        Sao chép thông tin
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             REQUEST TRANSLATION
+             ===================================================== -->
+
+        <section
+            id="request"
+            class="page-section"
+            data-page="request"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    REQUEST TRANSLATION
+                </span>
+
+                <h1>
+                    Yêu cầu dịch truyện
+                </h1>
+
+                <p>
+                    Gửi thông tin truyện để HILIU_Q xem xét.
+                </p>
+
+            </div>
+
+
+            <div class="container request-layout">
+
+
+                <form
+                    class="glass-card request-form"
+                    id="translationRequestForm"
+                >
+
+                    <div class="form-section-title">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Thông tin truyện
+                            </h2>
+
+                            <p>
+                                Điền thông tin cơ bản của bộ truyện.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <label class="form-field full">
+
+                            <span>
+                                Tên truyện
+                            </span>
+
+                            <input
+                                type="text"
+                                id="requestComicName"
+                                name="comicName"
+                                placeholder="Ví dụ: Solo Leveling"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label class="form-field">
+
+                            <span>
+                                Ngôn ngữ gốc
+                            </span>
+
+                            <select
+                                name="sourceLanguage"
+                                id="sourceLanguage"
+                                required
+                            >
+
+                                <option value="">
+                                    Chọn ngôn ngữ
+                                </option>
+
+                                <option value="en">
+                                    🇬🇧 English
+                                </option>
+
+                                <option value="zh">
+                                    🇨🇳 Chinese
+                                </option>
+
+                                <option value="ja">
+                                    🇯🇵 Japanese
+                                </option>
+
+                                <option value="ko">
+                                    🇰🇷 Korean
+                                </option>
+
+                                <option value="other">
+                                    🌍 Khác
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label class="form-field">
+
+                            <span>
+                                Ngôn ngữ cần dịch
+                            </span>
+
+                            <select
+                                name="targetLanguage"
+                                id="targetLanguage"
+                                required
+                            >
+
+                                <option value="">
+                                    Chọn ngôn ngữ
+                                </option>
+
+                                <option value="vi">
+                                    🇻🇳 Việt
+                                </option>
+
+                                <option value="en">
+                                    🇬🇧 Anh
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label class="form-field">
+
+                            <span>
+                                Số ảnh
+                            </span>
+
+                            <input
+                                type="number"
+                                min="1"
+                                name="imageCount"
+                                id="imageCount"
+                                placeholder="Ví dụ: 35"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label class="form-field">
+
+                            <span>
+                                Số chapter
+                            </span>
+
+                            <input
+                                type="number"
+                                min="1"
+                                name="chapterCount"
+                                id="chapterCount"
+                                placeholder="Ví dụ: 3"
+                            >
+
+                        </label>
+
+
+                        <label class="form-field full">
+
+                            <span>
+                                Link truyện / file mẫu
+                            </span>
+
+                            <input
+                                type="url"
+                                name="comicUrl"
+                                id="comicUrl"
+                                placeholder="https://..."
+                            >
+
+                        </label>
+
+
+                        <label class="form-field full">
+
+                            <span>
+                                Ghi chú
+                            </span>
+
+                            <textarea
+                                name="requestNote"
+                                id="requestNote"
+                                rows="5"
+                                placeholder="Yêu cầu về font, xưng hô, typeset..."
+                            ></textarea>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-submit-row">
+
+                        <p>
+                            Có thể gửi yêu cầu trực tiếp về Telegram
+                            <strong>@hiliu_q</strong>.
+                        </p>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+
+                            <i data-lucide="send"></i>
+
+                            Gửi yêu cầu
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <aside class="glass-card request-info">
+
+                    <div class="request-info-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <span class="eyebrow">
+                        HOW IT WORKS
+                    </span>
+
+                    <h2>
+                        Quy trình
+                    </h2>
+
+
+                    <div class="step-list">
+
+
+                        <div class="step">
+
+                            <span>
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Gửi thông tin
+                                </h3>
+
+                                <p>
+                                    Điền tên truyện, ngôn ngữ,
+                                    số ảnh/chapter.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <span>
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Báo giá
+                                </h3>
+
+                                <p>
+                                    HILIU_Q kiểm tra và xác nhận
+                                    chi phí.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <span>
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Tiến hành dịch
+                                </h3>
+
+                                <p>
+                                    Dịch, Clean và Typeset
+                                    theo yêu cầu.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <span>
+                                04
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Bàn giao
+                                </h3>
+
+                                <p>
+                                    Nhận thành phẩm qua link hoặc
+                                    hệ thống Reader Hub.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             LINK SECTION
+             ===================================================== -->
+
+        <section
+            id="bypass"
+            class="page-section"
+            data-page="bypass"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    LINK HUB
+                </span>
+
+                <h1>
+                    Vượt Link
+                </h1>
+
+                <p>
+                    Khu vực quản lý và xử lý liên kết được Admin
+                    tích hợp cho Reader Hub.
+                </p>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="glass-card link-tool">
+
+                    <div class="tool-icon">
+
+                        <i data-lucide="link"></i>
+
+                    </div>
+
+                    <h2>
+                        Link Manager
+                    </h2>
+
+                    <p>
+                        Nhập liên kết để hệ thống xử lý theo
+                        cấu hình của Admin.
+                    </p>
+
+
+                    <div class="link-input-group">
+
+                        <input
+                            type="url"
+                            id="linkInput"
+                            placeholder="https://example.com/..."
+                        >
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="processLinkButton"
+                        >
+                            Xử lý
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="linkResult"
+                        class="link-result"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ADMIN
+             ===================================================== -->
+
+        <section
+            id="admin"
+            class="page-section"
+            data-page="admin"
+        >
+
+            <div class="container page-header">
+
+                <span class="eyebrow">
+                    ADMIN PANEL
+                </span>
+
+                <h1>
+                    Quản trị HILIU_Q
+                </h1>
+
+                <p>
+                    Khu vực quản lý nội dung và cấu hình Reader Hub.
+                </p>
+
+            </div>
+
+
+            <div class="container admin-grid">
+
+
+                <article class="glass-card admin-card">
+
+                    <div class="admin-card-icon">
+                        <i data-lucide="megaphone"></i>
+                    </div>
+
+                    <span class="eyebrow">
+                        ANNOUNCEMENT
+                    </span>
+
+                    <h2>
+                        Thông báo toàn web
+                    </h2>
+
+                    <p>
+                        Thay đổi nội dung banner thông báo đặc biệt.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="adminAnnouncementButton"
+                    >
+                        Quản lý
+                    </button>
+
+                </article>
+
+
+                <article class="glass-card admin-card">
+
+                    <div class="admin-card-icon">
+                        <i data-lucide="book-plus"></i>
+                    </div>
+
+                    <span class="eyebrow">
+                        LIBRARY
+                    </span>
+
+                    <h2>
+                        Quản lý truyện
+                    </h2>
+
+                    <p>
+                        Thêm, sửa, xóa và phân quyền truyện.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="adminLibraryButton"
+                    >
+                        Quản lý
+                    </button>
+
+                </article>
+
+
+                <article class="glass-card admin-card">
+
+                    <div class="admin-card-icon">
+                        <i data-lucide="qr-code"></i>
+                    </div>
+
+                    <span class="eyebrow">
+                        DONATION
+                    </span>
+
+                    <h2>
+                        QR ngân hàng
+                    </h2>
+
+                    <p>
+                        Thêm hoặc thay đổi QR và thông tin nhận donate.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="adminBankButton"
+                    >
+                        Cấu hình
+                    </button>
+
+                </article>
+
+
+                <article class="glass-card admin-card">
+
+                    <div class="admin-card-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </div>
+
+                    <span class="eyebrow">
+                        MODULES
+                    </span>
+
+                    <h2>
+                        Modules
+                    </h2>
+
+                    <p>
+                        Thêm hoặc bật/tắt các phần chức năng của web.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="adminModulesButton"
+                    >
+                        Quản lý
+                    </button>
+
+                </article>
+
+
+                <article class="glass-card admin-card">
+
+                    <div class="admin-card-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+
+                    <span class="eyebrow">
+                        MEMBERS
+                    </span>
+
+                    <h2>
+                        Thành viên
+                    </h2>
+
+                    <p>
+                        Kiểm soát quyền Member, Admin và nội dung đăng.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="adminMembersButton"
+                    >
+                        Quản lý
+                    </button>
+
+                </article>
+
+
+                <article class="glass-card admin-card">
+
+                    <div class="admin-card-icon">
+                        <i data-lucide="settings-2"></i>
+                    </div>
+
+                    <span class="eyebrow">
+                        CONFIG
+                    </span>
+
+                    <h2>
+                        Cài đặt hệ thống
+                    </h2>
+
+                    <p>
+                        Cấu hình realtime, phòng xem, giao diện và API.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="adminSettingsButton"
+                    >
+                        Mở cài đặt
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         GLOBAL SEARCH MODAL
+         ========================================================= -->
+
+    <div
+        class="modal"
+        id="searchModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-panel glass-card">
+
+            <div class="modal-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SEARCH
+                    </span>
+
+                    <h2>
+                        Tìm kiếm
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    data-close-modal="searchModal"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <div class="global-search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Tìm truyện, phòng, thành viên..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div
+                class="search-results"
+                id="globalSearchResults"
+            >
+
+                <div class="empty-state">
+
+                    <i data-lucide="search"></i>
+
+                    <p>
+                        Bắt đầu nhập để tìm kiếm.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         NOTIFICATION MODAL
+         ========================================================= -->
+
+    <div
+        class="modal"
+        id="notificationModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-panel glass-card">
+
+            <div class="modal-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        NOTIFICATIONS
+                    </span>
+
+                    <h2>
+                        Thông báo
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    data-close-modal="notificationModal"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <div
+                class="notification-list"
+                id="notificationList"
+            >
+
+                <div class="notification-item">
+
+                    <div class="notification-item-icon">
+
+                        <i data-lucide="megaphone"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Chào mừng đến HILIU_Q
+                        </h3>
+
+                        <p>
+                            Reader Hub đã sẵn sàng.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         PROFILE MODAL
+         ========================================================= -->
+
+    <div
+        class="modal"
+        id="profileModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-panel profile-modal glass-card">
+
+            <button
+                type="button"
+                class="icon-btn modal-close-floating"
+                data-close-modal="profileModal"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+
+            <div class="profile-modal-avatar">
+
+                <img
+                    src="https://ibb.co/kNJ7TdN"
+                    alt="HILIU_Q"
+                    onerror="this.style.display='none';"
+                >
+
+                <span>
+                    HQ
+                </span>
+
+            </div>
+
+
+            <span class="eyebrow">
+                CREATOR
+            </span>
+
+            <h2>
+                HILIU_Q
+            </h2>
+
+            <p>
+                Dịch truyện theo yêu cầu
+            </p>
+
+
+            <a
+                href="https://t.me/hiliu_q"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary full-width"
+            >
+
+                <i data-lucide="send"></i>
+
+                Telegram @hiliu_q
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         WATCH ROOM MODAL
+         ========================================================= -->
+
+    <div
+        class="modal"
+        id="watchRoomModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-panel glass-card">
+
+            <div class="modal-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        CREATE ROOM
+                    </span>
+
+                    <h2>
+                        Tạo phòng rạp
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    data-close-modal="watchRoomModal"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <form id="watchRoomForm">
+
+                <label class="form-field">
+
+                    <span>
+                        Tên phòng
+                    </span>
+
+                    <input
+                        type="text"
+                        id="roomName"
+                        required
+                        placeholder="Ví dụ: HILIU Movie Night"
+                    >
+
+                </label>
+
+
+                <label class="form-field">
+
+                    <span>
+                        Link video
+                    </span>
+
+                    <input
+                        type="url"
+                        id="roomVideoUrl"
+                        required
+                        placeholder="https://youtube.com/..."
+                    >
+
+                </label>
+
+
+                <label class="form-field">
+
+                    <span>
+                        Quyền truy cập
+                    </span>
+
+                    <select
+                        id="roomPrivacy"
+                    >
+
+                        <option value="public">
+                            🌐 Công khai
+                        </option>
+
+                        <option value="private">
+                            🔐 Riêng tư
+                        </option>
+
+                        <option value="invite">
+                            👥 Chỉ người được mời
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label
+                    class="form-field"
+                    id="roomPasswordField"
+                    hidden
+                >
+
+                    <span>
+                        Mật khẩu phòng
+                    </span>
+
+                    <input
+                        type="password"
+                        id="roomPassword"
+                        placeholder="Nhập mật khẩu"
+                    >
+
+                </label>
+
+
+                <label class="checkbox-row">
+
+                    <input
+                        type="checkbox"
+                        id="roomChatEnabled"
+                        checked
+                    >
+
+                    <span>
+                        Cho phép chat trong phòng
+                    </span>
+
+                </label>
+
+
+                <label class="checkbox-row">
+
+                    <input
+                        type="checkbox"
+                        id="roomSyncEnabled"
+                        checked
+                    >
+
+                    <span>
+                        Đồng bộ phát video
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary full-width"
+                >
+
+                    <i data-lucide="plus"></i>
+
+                    Tạo phòng
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         MEDIA SHARE MODAL
+         ========================================================= -->
+
+    <div
+        class="modal"
+        id="mediaModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-panel media-modal glass-card">
+
+            <div class="modal-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LIVE STREAM
+                    </span>
+
+                    <h2 id="mediaModalTitle">
+                        Chia sẻ
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    data-close-modal="mediaModal"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="media-preview">
+
+                <video
+                    id="localMediaPreview"
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+
+                <div
+                    class="media-preview-placeholder"
+                    id="mediaPreviewPlaceholder"
+                >
+
+                    <i data-lucide="video"></i>
+
+                    <span>
+                        Chưa có tín hiệu
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="media-controls">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="muteMediaButton"
+                >
+                    <i data-lucide="mic"></i>
+                    Micro
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="stopMediaButton"
+                >
+                    <i data-lucide="square"></i>
+                    Dừng chia sẻ
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST
+         ========================================================= -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+
+            <div class="footer-brand">
+
+                <div class="brand">
+
+                    <div class="brand-logo">
+                        <span class="brand-moon">◐</span>
+                    </div>
+
+                    <div class="brand-text">
+
+                        <span class="brand-name">
+                            HILIU_Q
+                        </span>
+
+                        <span class="brand-subtitle">
+                            READER HUB
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    🌑 Dịch truyện theo yêu cầu
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home" data-route="home">
+                    Trang chủ
+                </a>
+
+                <a href="#read" data-route="read">
+                    Kho truyện
+                </a>
+
+                <a href="#donate" data-route="donate">
+                    Donate
+                </a>
+
+                <a href="#request" data-route="request">
+                    Yêu cầu dịch
+                </a>
+
+                <a
+                    href="https://t.me/hiliu_q"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Telegram
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 HILIU_Q
+                </span>
+
+                <span>
+                    Giá mềm • Chất lượng • Tận tâm
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+<!-- =============================================================
+     PAGE LOADER
+     ============================================================= -->
+
+<div
+    class="page-loader"
+    id="pageLoader"
+>
+
+    <div class="loader-logo">
+        ◐
+    </div>
+
+    <div class="loader-name">
+        HILIU_Q
+    </div>
+
+    <div class="loader-bar">
+
+        <span></span>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     MAIN JAVASCRIPT
+     ============================================================= -->
+
+<script
+    src="app.js"
+    defer
+></script>
+
+
+<!-- =============================================================
+     ICON INITIALIZATION
+     ============================================================= -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+
+    });
+</script>
+
+
+</body>
+</html>
